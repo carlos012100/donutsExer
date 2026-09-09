@@ -1,4 +1,4 @@
-import {data} from './donutsData'
+import {data} from './donutsData.mjs'
 
 //3.- El horno a la leña de esta posada es de alta calidad, debemos lanzar un hechizo para saber qué tipo de masa utilizan
 
@@ -7,6 +7,14 @@ import {data} from './donutsData'
 	const donuts = data.items.item
 
 	console.log(donuts)
+
+	function getDonutgitsBatter(){
+
+		for(let i = 0; i < donuts.length; i++){
+
+
+		}
+	}
 
 
 
