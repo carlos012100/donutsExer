@@ -105,3 +105,56 @@ function getDonutWithMostProtein(donuts){
 const donutWithMostProtein = getDonutWithMostProtein(donuts);
 
 console.log(donutWithMostProtein)
+
+
+function findTheMostFibre()
+{
+    let donutWIthMostFibre = null;
+    
+    let maxFibre = 0;
+
+    for (let i = 0; i < donuts.length; ++i)
+    {
+        let fibreNumbers = parseInt(donuts[i].nutrition_facts.nutrition.carbohydrate.carbs_detail.type.fibre)
+
+        if (maxFibre < fibreNumbers)
+        {
+            maxFibre = fibreNumbers;
+
+            donutWIthMostFibre = donuts[i];
+        }
+    }
+    return donutWIthMostFibre;
+}
+
+console.log(" ")
+
+let donutWithMostFibre = findTheMostFibre()
+
+console.log("Donut With Most Fibre: " + donutWithMostFibre.name + " With " + donutWithMostFibre.nutrition_facts.nutrition.carbohydrate.carbs_detail.type.fibre)
+
+//donut con más calorías (+ 50 exp)
+
+
+function findDonutWithMostCal ()
+{
+    let donutWithMostCal = null;
+
+    let maxCalFound = 0;
+     
+    for (let i = 0; i < donuts.length; ++i)
+    {
+        if (maxCalFound < donuts[i].nutrition_facts.nutrition.calories)
+        {
+            maxCalFound = donuts[i].nutrition_facts.nutrition.calories;
+
+            donutWithMostCal = donuts[i]
+        }
+    }
+    return donutWithMostCal;
+}
+
+let donutWithMostCal = findDonutWithMostCal();
+
+console.log(" ");
+console.log("Donut with highest calories: " + donutWithMostCal.name + " With " + donutWithMostCal.nutrition_facts.nutrition.calories)

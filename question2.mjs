@@ -56,3 +56,12 @@ function showMedianCalories() {
 
 
 }
+function createArrayDataCal()
+{
+    let arrayofCal = [];
+
+    // for (let i = 0; i < donuts.length; ++i)
+    // {
+    //     if()
+    // }
+}
