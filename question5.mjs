@@ -2,11 +2,11 @@ import { data } from "./donutsData.mjs"
 
 const donuts = data.items.item
 
-function copyData(donut){
+function copyData(donut) {
 
     let newData = []
 
-    for(let i = 0; i < donut.length; i++){
+    for (let i = 0; i < donut.length; i++) {
 
         newData.push(donut[i]);
     }
@@ -20,27 +20,30 @@ let donutsCopy = copyData(donuts);
 
 //Los donuts con el colesterol > 12 modificar las grasas trans a 3,2 gr (+ 50 exp)
 
-function cholAndFatModifier(donuts){
+function cholAndFatModifier(donuts) {
 
     const cholSafeSpot = 12
 
-    for(let i = 0; i < donuts.length; i++){
+    for (let i = 0; i < donuts.length; i++) {
 
         let donutChol = parseInt(donuts[i].nutrition_facts.nutrition.cholesterol.amount)
 
         let donutTrans = donuts[i].nutrition_facts.nutrition.fat.fat_type.trans
 
-        if(donutChol > cholSafeSpot){
+        if (donutChol > cholSafeSpot) {
 
             donutTrans = "3.2g"
-
 
         }
 
 
-        
+
     }
 }
+
+cholAndFatModifier(donutsCopy);
+
+console.log(donutsCopy[1].nutrition_facts.nutrition.fat.fat_type.trans)
 
 
 
